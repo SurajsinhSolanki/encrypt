@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Secure Encrypt & Decrypt</title>
-        <link rel="stylesheet" href="/styles.css" />
+        <title>Encrypt & Decrypt Text Securely</title>
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
         <div class="container">
@@ -14,7 +14,7 @@
                 <!-- Encrypt Section -->
                 <div class="column">
                     <h2>Encrypt Text</h2>
-                    <form action="/encrypt" method="POST">
+                    <form id="encryptForm">
                         <label for="textToEncrypt">Text to Encrypt:</label>
                         <textarea
                             name="textToEncrypt"
@@ -33,16 +33,18 @@
                             minlength="8"
                             placeholder="Enter at least 8 characters"
                         />
-                        <button type="submit">Encrypt</button>
+                        <button type="button" onclick="encryptText()">
+                            Encrypt
+                        </button>
                     </form>
                     <p>Encrypted Text:</p>
-                    <textarea rows="3" readonly><%= encryptedText %></textarea>
+                    <textarea id="encryptedText" rows="3" readonly></textarea>
                 </div>
 
                 <!-- Decrypt Section -->
                 <div class="column">
                     <h2>Decrypt Text</h2>
-                    <form action="/decrypt" method="POST">
+                    <form id="decryptForm">
                         <label for="textToDecrypt">Encrypted Text:</label>
                         <textarea
                             name="textToDecrypt"
@@ -61,12 +63,15 @@
                             minlength="8"
                             placeholder="Enter at least 8 characters"
                         />
-                        <button type="submit">Decrypt</button>
+                        <button type="button" onclick="decryptText()">
+                            Decrypt
+                        </button>
                     </form>
                     <p>Decrypted Text:</p>
-                    <textarea rows="3" readonly><%= decryptedText %></textarea>
+                    <textarea id="decryptedText" rows="3" readonly></textarea>
                 </div>
             </div>
         </div>
+        <script src="script.js"></script>
     </body>
 </html>
