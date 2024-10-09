@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Secure Encrypt & Decrypt</title>
+        <link rel="stylesheet" href="/styles.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Encrypt & Decrypt Text Securely</h1>
+
+            <div class="row">
+                <!-- Encrypt Section -->
+                <div class="column">
+                    <h2>Encrypt Text</h2>
+                    <form action="/encrypt" method="POST">
+                        <label for="textToEncrypt">Text to Encrypt:</label>
+                        <textarea
+                            name="textToEncrypt"
+                            id="textToEncrypt"
+                            rows="3"
+                            required
+                        ></textarea>
+                        <label for="encryptionKey"
+                            >Key (8 or more characters):</label
+                        >
+                        <input
+                            type="text"
+                            name="encryptionKey"
+                            id="encryptionKey"
+                            required
+                            minlength="8"
+                            placeholder="Enter at least 8 characters"
+                        />
+                        <button type="submit">Encrypt</button>
+                    </form>
+                    <p>Encrypted Text:</p>
+                    <textarea rows="3" readonly><%= encryptedText %></textarea>
+                </div>
+
+                <!-- Decrypt Section -->
+                <div class="column">
+                    <h2>Decrypt Text</h2>
+                    <form action="/decrypt" method="POST">
+                        <label for="textToDecrypt">Encrypted Text:</label>
+                        <textarea
+                            name="textToDecrypt"
+                            id="textToDecrypt"
+                            rows="3"
+                            required
+                        ></textarea>
+                        <label for="decryptionKey"
+                            >Key (8 or more characters):</label
+                        >
+                        <input
+                            type="text"
+                            name="decryptionKey"
+                            id="decryptionKey"
+                            required
+                            minlength="8"
+                            placeholder="Enter at least 8 characters"
+                        />
+                        <button type="submit">Decrypt</button>
+                    </form>
+                    <p>Decrypted Text:</p>
+                    <textarea rows="3" readonly><%= decryptedText %></textarea>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
