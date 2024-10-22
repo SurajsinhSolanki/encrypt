@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Encryption Tool</title>
+        <link rel="stylesheet" href="encryption.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Encrypt & Decrypt Text</h1>
+
+            <!-- Encryption Section -->
+            <div class="tab-content active">
+                <label for="textToEncrypt">Text to Encrypt</label>
+                <textarea id="textToEncrypt" placeholder="Enter text to encrypt"></textarea>
+
+                <label for="encryptionKey">Key</label>
+                <input
+                    type="text"
+                    id="encryptionKey"
+                    minlength="8"
+                    placeholder="Enter at least 8 characters"
+                />
+
+                <label>Encrypted Text</label>
+                <textarea id="encryptedText" readonly></textarea>
+
+                <div class="button-group">
+                    <button onclick="encryptText()">Encrypt</button>
+                    <button onclick="copyEncryptedText()">Copy</button>
+                </div>
+            </div>
+
+            <!-- Decryption Section -->
+            <div class="tab-content">
+                <label for="textToDecrypt">Text to Decrypt</label>
+                <textarea id="textToDecrypt" placeholder="Enter text to decrypt"></textarea>
+
+                <label for="decryptionKey">Key</label>
+                <input
+                    type="text"
+                    id="decryptionKey"
+                    minlength="8"
+                    placeholder="Enter at least 8 characters"
+                />
+
+                <label>Decrypted Text</label>
+                <textarea id="decryptedText" readonly></textarea>
+
+                <div class="button-group">
+                    <button onclick="decryptText()">Decrypt</button>
+                    <button onclick="copyDecryptedText()">Copy</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="encryption.js"></script>
+    </body>
+</html>

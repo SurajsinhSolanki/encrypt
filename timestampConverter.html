@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Date and Timestamp Converter</title>
+        <link rel="stylesheet" href="timestampConverter.css" />
+    </head>
+    <body>
+        <div class="container">
+            <!-- Tab navigation -->
+            <div class="tabs">
+                <button
+                    class="tab-btn active"
+                    onclick="showTab('timestampToDate')"
+                >
+                    Timestamp to Date
+                </button>
+                <button class="tab-btn" onclick="showTab('dateToTimestamp')">
+                    Date to Timestamp
+                </button>
+            </div>
+
+            <!-- Timestamp to Date Section -->
+            <div id="timestampToDate" class="tab-content active">
+                <label for="timestampInput"
+                    >Timestamp (milliseconds or seconds)</label
+                >
+                <textarea
+                    id="timestampInput"
+                    placeholder="Enter timestamp here"
+                ></textarea>
+
+                <label for="dateOutput">Date</label>
+                <textarea id="dateOutput" readonly></textarea>
+
+                <div class="button-group">
+                    <button onclick="convertTimestampToDate()">Convert</button>
+                    <button onclick="copyDateOutput()">Copy</button>
+                </div>
+            </div>
+
+            <!-- Date to Timestamp Section -->
+            <div id="dateToTimestamp" class="tab-content">
+                <label for="timestampInput">DateTime UCT</label>
+                <div class="date-inputs">
+                    <input
+                        id="yearInput"
+                        type="number"
+                        placeholder="Yr"
+                        min="1970"
+                        max="2100"
+                    />
+                    <span>-</span>
+                    <input
+                        id="monthInput"
+                        type="number"
+                        placeholder="Mon"
+                        min="1"
+                        max="12"
+                    />
+                    <span>-</span>
+                    <input
+                        id="dayInput"
+                        type="number"
+                        placeholder="Day"
+                        min="1"
+                        max="31"
+                    />
+                    <input
+                        id="hourInput"
+                        type="number"
+                        placeholder="Hr"
+                        min="0"
+                        max="23"
+                    />
+                    <span>:</span>
+                    <input
+                        id="minuteInput"
+                        type="number"
+                        placeholder="Min"
+                        min="0"
+                        max="59"
+                    />
+                    <span>:</span>
+                    <input
+                        id="secondInput"
+                        type="number"
+                        placeholder="Sec"
+                        min="0"
+                        max="59"
+                    />
+                </div>
+
+                <label for="timestampOutput">Timestamp</label>
+                <textarea id="timestampOutput" readonly></textarea>
+
+                <div class="button-group">
+                    <button onclick="convertDateToTimestamp()">Convert</button>
+                    <button onclick="copyTimestampOutput()">Copy</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="timestampConverter.js"></script>
+    </body>
+</html>

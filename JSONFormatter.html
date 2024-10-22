@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JSON Formatter</title>
+        <link rel="stylesheet" href="jsonFormatter.css" />
+    </head>
+    <body>
+        <div class="container">
+            <!-- Tab navigation -->
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('format')">
+                    Format JSON
+                </button>
+                <button class="tab-btn" onclick="showTab('minify')">
+                    Minify JSON
+                </button>
+            </div>
+
+            <!-- Format JSON Section -->
+            <div id="format" class="tab-content active">
+                <label for="jsonInput">JSON Input</label>
+                <textarea
+                    id="jsonInput"
+                    placeholder="Paste your JSON here"
+                ></textarea>
+                <label for="formattedOutput">Formatted JSON</label>
+                <textarea id="formattedOutput" readonly></textarea>
+                <div class="button-group">
+                    <button onclick="formatJson()">Format</button>
+                    <button onclick="copyFormattedJson()">Copy</button>
+                </div>
+            </div>
+
+            <!-- Minify JSON Section -->
+            <div id="minify" class="tab-content">
+                <label for="jsonToMinify">JSON Input</label>
+                <textarea
+                    id="jsonToMinify"
+                    placeholder="Paste your JSON here"
+                ></textarea>
+                <label for="minifiedOutput">Minified JSON</label>
+                <textarea id="minifiedOutput" readonly></textarea>
+                <div class="button-group">
+                    <button onclick="minifyJson()">Minify</button>
+                    <button onclick="copyMinifiedJson()">Copy</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="jsonFormatter.js"></script>
+    </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Image to Base64 Converter</title>
+        <link rel="stylesheet" href="imageConverter.css" />
+    </head>
+    <body>
+        <div class="container">
+            <!-- Tab navigation -->
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('encode')">
+                    Encode
+                </button>
+                <button class="tab-btn" onclick="showTab('decode')">
+                    Decode
+                </button>
+                <button class="tab-btn" onclick="showTab('imageEncode')">
+                    Image to Base64
+                </button>
+                <button class="tab-btn" onclick="showTab('imageDecode')">
+                    Base64 to Image
+                </button>
+            </div>
+
+            <!-- Encode Section -->
+            <div id="encode" class="tab-content active">
+                <label for="textToEncode">Text to encode</label>
+                <textarea id="textToEncode" placeholder="Paste here"></textarea>
+                <label for="base64Output">Base64</label>
+                <textarea id="base64Output" readonly></textarea>
+                <div class="button-group">
+                    <button onclick="encodeText()">Convert</button>
+                    <button onclick="copyBase64Output()">Copy</button>
+                </div>
+            </div>
+
+            <!-- Decode Section -->
+            <div id="decode" class="tab-content">
+                <label for="base64Input">Base64 to decode</label>
+                <textarea
+                    id="base64Input"
+                    placeholder="Paste Base64 here"
+                ></textarea>
+                <label for="decodedText">Decoded Text</label>
+                <textarea id="decodedText" readonly></textarea>
+                <div class="button-group">
+                    <button onclick="decodeText()">Convert</button>
+                    <button onclick="copyDecodedText()">Copy</button>
+                </div>
+            </div>
+
+            <!-- Image to Base64 Section -->
+            <div id="imageEncode" class="tab-content">
+                <label for="imageToEncode">Select image to encode</label>
+                <input type="file" id="imageToEncode" accept="image/*" />
+                <label for="imageBase64Output">Base64</label>
+                <textarea id="imageBase64Output" readonly></textarea>
+                <div class="button-group">
+                    <button onclick="encodeImageToBase64()">Convert</button>
+                    <button onclick="copyImageBase64Output()">Copy</button>
+                </div>
+            </div>
+
+            <!-- Base64 to Image Section -->
+            <div id="imageDecode" class="tab-content">
+                <label for="base64ImageInput">Base64 to decode</label>
+                <textarea
+                    id="base64ImageInput"
+                    placeholder="Paste Base64 here"
+                ></textarea>
+                <label for="decodedImage">Decoded Image</label>
+                <img
+                    id="decodedImage"
+                    alt="Decoded Image will appear here"
+                    style="max-width: 100%; display: none"
+                />
+                <div class="button-group">
+                    <button onclick="decodeBase64ToImage()">Convert</button>
+                    <button
+                        id="downloadButton"
+                        style="display: none"
+                        onclick="downloadImage()"
+                    >
+                        Download Image
+                    </button>
+                </div>
+            </div>
+        </div>
+        <script src="imageConverter.js"></script>
+    </body>
+</html>

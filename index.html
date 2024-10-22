@@ -3,76 +3,21 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Encrypt & Decrypt Text Securely</title>
+        <title>Tools</title>
         <link rel="stylesheet" href="style.css" />
-        <link rel="icon" type="image/svg+xml" href="icon.svg" />
     </head>
     <body>
         <div class="container">
-            <h1>Encrypt & Decrypt Text Securely</h1>
-
-            <div class="row">
-                <!-- Encrypt Section -->
-                <div class="column">
-                    <h2>Encrypt Text</h2>
-                    <form id="encryptForm">
-                        <label for="textToEncrypt">Text to Encrypt:</label>
-                        <textarea
-                            name="textToEncrypt"
-                            id="textToEncrypt"
-                            rows="3"
-                            required
-                        ></textarea>
-                        <label for="encryptionKey"
-                            >Key (8 or more characters):</label
-                        >
-                        <input
-                            type="text"
-                            name="encryptionKey"
-                            id="encryptionKey"
-                            required
-                            minlength="8"
-                            placeholder="Enter at least 8 characters"
-                        />
-                        <button type="button" onclick="encryptText()">
-                            Encrypt
-                        </button>
-                    </form>
-                    <p>Encrypted Text:</p>
-                    <textarea id="encryptedText" rows="3" readonly></textarea>
-                </div>
-
-                <!-- Decrypt Section -->
-                <div class="column">
-                    <h2>Decrypt Text</h2>
-                    <form id="decryptForm">
-                        <label for="textToDecrypt">Encrypted Text:</label>
-                        <textarea
-                            name="textToDecrypt"
-                            id="textToDecrypt"
-                            rows="3"
-                            required
-                        ></textarea>
-                        <label for="decryptionKey"
-                            >Key (8 or more characters):</label
-                        >
-                        <input
-                            type="text"
-                            name="decryptionKey"
-                            id="decryptionKey"
-                            required
-                            minlength="8"
-                            placeholder="Enter at least 8 characters"
-                        />
-                        <button type="button" onclick="decryptText()">
-                            Decrypt
-                        </button>
-                    </form>
-                    <p>Decrypted Text:</p>
-                    <textarea id="decryptedText" rows="3" readonly></textarea>
-                </div>
-            </div>
+            <h1>Choose a Tool</h1>
+            <button onclick="window.location.href='encryption.html'">
+                Encryption Tool
+            </button>
+            <button onclick="window.location.href='imageConverter.html'">
+                Image to Base64 Converter
+            </button>
+            <button onclick="window.location.href='timestampConverter.html'">
+                Timestamp Converter Converter
+            </button>
         </div>
-        <script src="script.js"></script>
     </body>
 </html>
