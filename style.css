@@ -1,33 +1,75 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin: 0;
-    background-color: #f4f4f9;
 }
 
 .container {
     text-align: center;
+    padding: 20px;
+    max-width: 1200px;
 }
 
 h1 {
+    font-size: 36px;
     color: #333;
+    margin-bottom: 40px;
 }
 
-button {
-    padding: 12px 20px;
-    margin: 10px;
-    font-size: 16px;
-    background-color: #4c6ef5;
-    color: white;
-    border: none;
-    border-radius: 5px;
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Display 3 items in one row */
+    gap: 20px;
+}
+
+.tool-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    text-align: left;
 }
 
-button:hover {
-    background-color: #364fc7;
+.tool-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tool-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #4c6ef5;
+}
+
+.tool-card p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 992px) {
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr); /* Display 2 items in one row */
+    }
+}
+
+@media (max-width: 768px) {
+    .tools-grid {
+        grid-template-columns: 1fr; /* Display 1 item per row on small screens */
+    }
+
+    h1 {
+        font-size: 28px;
+    }
 }

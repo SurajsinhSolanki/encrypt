@@ -9,15 +9,43 @@
     <body>
         <div class="container">
             <h1>Choose a Tool</h1>
-            <button onclick="window.location.href='encryption.html'">
-                Encryption Tool
-            </button>
-            <button onclick="window.location.href='imageConverter.html'">
-                Image to Base64 Converter
-            </button>
-            <button onclick="window.location.href='timestampConverter.html'">
-                Timestamp Converter Converter
-            </button>
+            <div class="tools-grid">
+                <div
+                    class="tool-card"
+                    onclick="window.location.href='encryption.html'"
+                >
+                    <h3>Encryption Tool</h3>
+                    <p>Securely encrypt and decrypt text.</p>
+                </div>
+                <div
+                    class="tool-card"
+                    onclick="window.location.href='imageConverter.html'"
+                >
+                    <h3>Image to Base64 Converter</h3>
+                    <p>Convert images to Base64 and vice versa.</p>
+                </div>
+                <div
+                    class="tool-card"
+                    onclick="window.location.href='timestampConverter.html'"
+                >
+                    <h3>Timestamp Converter</h3>
+                    <p>Convert timestamps to human-readable dates.</p>
+                </div>
+                <div
+                    class="tool-card"
+                    onclick="window.location.href='hashGenerator.html'"
+                >
+                    <h3>Hash Generator</h3>
+                    <p>Create and compare cryptographic hashes.</p>
+                </div>
+                <div
+                    class="tool-card"
+                    onclick="window.location.href='JSONFormatter.html'"
+                >
+                    <h3>JSON Formatter</h3>
+                    <p>Format and minify JSON data easily.</p>
+                </div>
+            </div>
         </div>
     </body>
 </html>
